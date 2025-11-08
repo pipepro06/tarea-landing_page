@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Aurora — Café De Alta calidad</title>
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="desktop.css" media="screen and (min-width:768px)">
+</head>
+<body>
+  <header class="hero reveal">
+    <h1>Café Aurora</h1>
+    <p>Sabor auténtico. Aroma inolvidable.</p>
+    <button class="btn-primary" onclick="scrollComprar()">Comprar ahora</button>
+  </header>
+
+  <main>
+    <h2 class="section-title reveal">Nuestro Café</h2>
+    <div class="image-wrap reveal">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&auto=format&fit=crop&q=80" alt="Café artesanal">
+    </div>
+
+    <section class="beneficios reveal">
+      <h3 class="section-title">Beneficios</h3>
+      <ul>
+        <li>🌱 Cultivo artesanal colombiano</li>
+        <li>🔥 Calidad garantizada por pedido</li>
+        <li>🚚 Envio gratis a todo el país</li>
+      </ul>
+    </section>
+
+    <section id="comprar" class="comprar reveal">
+      <h3 class="section-title">Presentaciones</h3>
+      <div class="selector">
+        <label class="sr-only" for="cantidad">Selecciona presentación</label>
+        <select id="cantidad">
+          <option value="18000">250g — $18.000</option>
+          <option value="32000">500g — $32.000</option>
+          <option value="58000">1kg — $58.000</option>
+        </select>
+      </div>
+
+      <p class="precio">Precio: <span id="precioValor">$18.000</span></p>
+      <button id="btnComprar" class="btn-primary">Comprar por WhatsApp</button>
+    </section>
+
+    <h4 class="section-title">Comentarios: </h4>
+    <section class="testimonios reveal">
+        <div class="testimonio">“El mejor café que he probado.” — Laura</div>
+        <div class="testimonio">“Aroma celestial y entrega rápida.” — David</div>
+        <div class="testimonio">“Sabor a Colombia en cada taza.” — Camila</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="reveal">
+    <p>© <span id="year"></span> Café Aurora · Hecho con amor desde Colombia ☕</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
