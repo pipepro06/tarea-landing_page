@@ -3,37 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Café Aurora — Café De Alta calidad</title>
+  <title>Café Aurora — Café Premium Colombiano</title>
   <link rel="stylesheet" href="mobile.css">
   <link rel="stylesheet" href="desktop.css" media="screen and (min-width:768px)">
 </head>
 <body>
-  <header class="hero reveal">
-    <h1>Café Aurora</h1>
-    <p>Sabor auténtico. Aroma inolvidable.</p>
-    <button class="btn-primary" onclick="scrollComprar()">Comprar ahora</button>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Café Aurora</h1>
+      <p>El verdadero sabor del café artesanal colombiano.</p>
+      <button class="btn-primary" onclick="scrollComprar()">Comprar ahora</button>
+    </div>
   </header>
 
   <main>
-    <h2 class="section-title reveal">Nuestro Café</h2>
-    <div class="image-wrap reveal">
-      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&auto=format&fit=crop&q=80" alt="Café artesanal">
-    </div>
-
-    <section class="beneficios reveal">
-      <h3 class="section-title">Beneficios</h3>
-      <ul>
-        <li>🌱 Cultivo artesanal colombiano</li>
-        <li>🔥 Calidad garantizada por pedido</li>
-        <li>🚚 Envio gratis a todo el país</li>
-      </ul>
+    <section class="intro fadeIn">
+      <h2 class="section-title">Nuestro Café</h2>
+      <p class="intro-text">Seleccionamos los mejores granos cultivados en las montañas colombianas, tostados artesanalmente para garantizar sabor, aroma y calidad premium.</p>
     </section>
 
-    <section id="comprar" class="comprar reveal">
+    <div class="image-wrap fadeIn">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&auto=format&fit=crop&q=80" alt="Café artesanal premium">
+    </div>
+
+    <section class="beneficios fadeIn">
+      <h3 class="section-title">Beneficios</h3>
+      <div class="beneficios-grid">
+        <div class="beneficio-card">🌱 100% Colombiano — calidad de origen</div>
+        <div class="beneficio-card">🔥 Tostado artesanal — recién hecho</div>
+        <div class="beneficio-card">💎 Calidad Premium — sabor intenso</div>
+        <div class="beneficio-card">🚚 Envíos a todo el país</div>
+      </div>
+    </section>
+
+    <section id="comprar" class="comprar fadeIn">
       <h3 class="section-title">Presentaciones</h3>
+      <p class="sub">Elige la presentación ideal para tu gusto</p>
+
       <div class="selector">
         <label class="sr-only" for="cantidad">Selecciona presentación</label>
-        <select id="cantidad">
+        <select id="cantidad" name="cantidad">
           <option value="18000">250g — $18.000</option>
           <option value="32000">500g — $32.000</option>
           <option value="58000">1kg — $58.000</option>
@@ -44,19 +53,21 @@
       <button id="btnComprar" class="btn-primary">Comprar por WhatsApp</button>
     </section>
 
-    <h4 class="section-title">Comentarios: </h4>
-    <section class="testimonios reveal">
-        <div class="testimonio">“El mejor café que he probado.” — Laura</div>
-        <div class="testimonio">“Aroma celestial y entrega rápida.” — David</div>
-        <div class="testimonio">“Sabor a Colombia en cada taza.” — Camila</div>
+    <section class="testimonios fadeIn">
+      <h3 class="section-title">Testimonios</h3>
+      <div class="testimonios-grid">
+        <div class="testimonio-card">“El mejor café que he probado.” — Adrian</div>
+        <div class="testimonio-card">“Aroma celestial y entrega rápida.” — Santiago</div>
+        <div class="testimonio-card">“Sabor auténtico en cada taza.” — Yisus</div>
       </div>
     </section>
   </main>
 
-  <footer class="reveal">
-    <p>© <span id="year"></span> Café Aurora · Hecho con amor desde Colombia ☕</p>
+  <footer>
+    <p>Café Aurora © <span id="year"></span> — Hecho con amor desde Colombia ☕</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
