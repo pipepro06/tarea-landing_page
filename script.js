@@ -1,26 +1,36 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   const cantidad = document.getElementById('cantidad');
   const precioValor = document.getElementById('precioValor');
 
-  function formatear(num){
-    return num.toLocaleString('es-CO',{style:'currency',currency:'COP'});
+  function formatear(num) {
+    if (!num && num !== 0) return '';
+    return Number(num).toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
   }
 
-  cantidad.addEventListener('change',()=>{
-    precioValor.textContent = formatear(parseInt(cantidad.value));
-  });
+  if (cantidad && precioValor) {
+    precioValor.textContent = formatear(parseInt(cantidad.value, 10));
+
+    cantidad.addEventListener('change', () => {
+      precioValor.textContent = formatear(parseInt(cantidad.value, 10));
+    });
+  }
 
   window.scrollComprar = () => {
-    document.getElementById('comprar').scrollIntoView({behavior:'smooth'});
+    const comprar = document.getElementById('comprar');
+    if (comprar) comprar.scrollIntoView({ behavior: 'smooth' });
   };
 
-  document.getElementById('btnComprar').addEventListener('click',()=>{
-    const tel = '573134971077';
-    const precio = formatear(parseInt(cantidad.value));
-    const msg = `Hola, quiero comprar Café Aurora. Presentación: ${precio}`;
-    window.open(`https://wa.me/${tel}?text=${encodeURIComponent(msg)}`,'_blank');
-  });
+  const btnComprar = document.getElementById('btnComprar');
+  if (btnComprar && cantidad) {
+    btnComprar.addEventListener('click', () => {
+      const tel = '573134971077'; // número (ajusta si lo necesitas)
+      const precio = formatear(parseInt(cantidad.value, 10));
+      const msg = `Hola, quiero comprar Café Aurora. Presentación: ${precio}`;
+      window.open(`https://wa.me/${tel}?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+  }
 });
