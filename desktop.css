@@ -1,1 +1,49 @@
-body{padding:40px;} .hero h1{font-size:48px;} img{max-width:800px;margin:auto;display:block;}
+/* desktop.css - estilos para pantallas >= 768px */
+@media (min-width: 768px) {
+
+  :root {
+    --page-padding: 40px;
+  }
+
+  body {
+    padding: var(--page-padding);
+    background-attachment: fixed;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero {
+    height: 60vh;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 60px;
+  }
+
+  .beneficios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .image-wrap img {
+    max-width: 850px;
+    margin: 18px auto;
+    display: block;
+  }
+
+  .comprar {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .selector select {
+    min-width: 220px;
+  }
+}
