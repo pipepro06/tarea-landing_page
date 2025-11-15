@@ -1,1 +1,162 @@
-body{background:#1a0f07;color:#fff;font-family:Arial,Helvetica,sans-serif;padding:16px;} .hero{height:60vh;display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;} .btn-primary{background:#c8955e;border:none;padding:12px 18px;border-radius:10px;cursor:pointer;} .section-title{text-align:center;color:#c8955e;margin-top:24px;} img{width:100%;border-radius:12px;} .precio{color:#c8955e;font-weight:bold;font-size:20px;text-align:center;margin-top:10px;} .testimonios{margin:30px 0;overflow:hidden;} .carrusel{display:flex;width:300%;animation:slide 10s infinite linear;} .testimonio{width:100%;text-align:center;padding:20px;} @keyframes slide{0%{transform:translateX(0);}33%{transform:translateX(-100%);}66%{transform:translateX(-200%);}100%{transform:translateX(0);}}
+/* mobile.css - base / móvil */
+:root {
+  --accent: #c8955e;
+  --bg: #1a0f07;
+  --text: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.4;
+}
+
+/* accesibilidad: oculto visual pero legible por lectores */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.hero {
+  height: 75vh;
+  background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&auto=format&fit=crop&q=80') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin: 0;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 18px;
+  opacity: 0.95;
+  margin: 8px 0 18px 0;
+}
+
+.btn-primary {
+  background: var(--accent);
+  padding: 14px 22px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform .12s ease, opacity .12s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: translateY(-3px);
+  opacity: 0.95;
+  outline: none;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 26px;
+  margin-top: 32px;
+  color: var(--accent);
+}
+
+.intro-text {
+  text-align: center;
+  padding: 0 12px;
+  opacity: 0.9;
+}
+
+.image-wrap img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+  display: block;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  padding: 14px;
+}
+
+.beneficio-card {
+  background: rgba(255,255,255,0.06);
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.comprar {
+  text-align: center;
+  padding: 20px;
+}
+
+.selector select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-top: 10px;
+  background: rgba(255,255,255,0.02);
+  color: inherit;
+}
+
+.precio {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  padding: 14px;
+}
+
+.testimonio-card {
+  background: rgba(255,255,255,0.06);
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+.fadeIn {
+  animation: fade 0.9s ease both;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ajustes pequeños para pantallas intermedias */
+@media (min-width: 480px) {
+  .hero-content h1 { font-size: 48px; }
+  .section-title { font-size: 28px; }
+}
